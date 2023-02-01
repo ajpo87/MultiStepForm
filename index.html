@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Pratica Ordem dos Notários</title>
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><img class="block w-auto" style="height: 4rem" src="images/100.png" alt="Logomarca dos Notários em azul, escrito 'Notários Portugueses'. Link redirecciona para a Home"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <!-- Side Bar -->
+    <div class="sidebar">
+      <a class="active" href="#home">Documentos</a>
+      <a href="#pedidosCertidao">Pedidos de Certidão</a>
+      <a href="#certidoes">Certidões</a>
+      <a href="#configuracoes">Configurações de Arquivo</a>
+    </div>
+
+ 
+    <div class="container">
+      <nav aria-label="...">
+        <ul class="pagination pagination-lg">
+          <li  id="estep1" class="page-item  active"><a class="page-link" href="#" tabindex="-1">1 Documento</a></li>
+          <li  id="estep2" class="page-item"><a class="page-link" href="#">2 Controlo</a></li>
+          <li  id="estep3" class="page-item"><a class="page-link" href="#">3 Atos</a></li>
+          <li  id="estep4" class="page-item"><a class="page-link" href="#">4 Dados Adicionais</a></li>
+          <li  id="estep5" class="page-item"><a class="page-link" href="#">5 Resumo</a></li>
+          <li  id="estep6" class="page-item"><a class="page-link" href="#">6 Pagamento </a></li>
+          <li  id="estep7" class="page-item"><a class="page-link" href="#">7 Comprovativo</a></li>
+        </ul>
+      </nav>
+      
+      <form>
+        <div class="form-step" id="step-1">
+          <!-- Passo 1-->
+          <h2>Intervenitentes</h2>
+          <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <input type="text" class="form-control" id="nome" required />            
+            <label for="nif">NIF</label>
+            <input type="number" max="999999999" class="form-control" id="nome" required />
+            <label for="nome">Nome</label>
+            <input type="text"  class="form-control" id="nome" required />
+            <label for="morada">Morada</label>
+            <textarea  class="form-control" id="morada" > </textarea>
+            <label for="pais">Pais</label>
+            <select name="pais" id="pais" class="form-control">
+              <option value="portugal">PT-Portugal</option>
+              <option value="espanha">ES-Espanha</option>
+              <option value="brasil">BR-Brasil</option>
+            </select>
+            <label for="concelho">Concelho</label>
+            <select name="concelho" id="concelho" class="form-control">
+              <option value="Lisboa">Lisboa</option>
+              <option value="Cascais">Cascais</option>
+              <option value="Porto">Porto</option>
+            </select>
+            <label for="concelho">Freguesia</label>
+            <select name="freguesia" id="freguesia" class="form-control">
+              <option value="Benfica">Benfica</option>
+              <option value="Alvalade">Alvalade</option>
+              <option value="sao_vicente">São Vicente</option>
+            </select>
+            <label for="num_ident">Nº Identifiação Civil (Estrangeiros)</label>
+            <input type="number" max="999999999" class="form-control" id="num_ident"  />
+            <label for="file-input">Selecione um ficheiro</label>
+            <div id="file-drop-area" class="form-control-file">
+                <p>Arraste e solte o ficheiro aqui</p>
+                <input type="file" id="file-input" name="file-input" multiple required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary next-step">Próximo passo</button>
+        </div>
+         <!-- Passo 2-->
+        <div class="form-step" id="step-2">
+          <h2>Controlo</h2>
+          <div class="form-group">
+            <label for="id_doc">Identificador Unico do documento</label>
+            <input type="text" class="form-control" id="endereco" required />
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado</label>
+            <input type="text" class="form-control" id="estado" required />
+          </div>
+          <div class="form-group">
+            <label for="data_reg">Data do registo</label>
+            <input type="date" class="form-control" id="data_reg" required />
+          </div>
+          <div class="form-group">
+            <label for="user">Utilizador</label>*
+            <input type="text" class="form-control" id="estado" required />
+          </div>
+          <button type="button" class="btn btn-primary prev-step">Passo anterior</button>
+          <button type="button" class="btn btn-primary next-step">Próximo passo</button>
+        </div>
+         <!-- Passo 3-->
+          <div class="form-step" id="step-3">
+          <h2>Ato</h2>
+            <div class="form-group">
+              <label for="ato">Ato</label>
+              <select class="form-control" id="ato">
+              <option value="sel">-Selecione-</option>
+              <option value="procuracao">Procuração</option>
+            </select>
+            </div>
+            <button type="button" class="btn btn-primary prev-step">Passo anterior</button>
+            <button type="button" class="btn btn-primary next-step">Próximo passo</button>
+          </div>
+           <!-- Passo 4-->
+           <div class="form-step" id="step-4">
+            <h2>Dados Adicionais</h2>
+              <div class="form-group">
+                <label for="ato">Tipo</label>
+                <select class="form-control" id="ato">
+                <option value="sel">-Selecione-</option>
+                <option value="mandante">Mandante</option>
+                <option value="mandatario">Mandatário</option>
+              </select>
+              </div>
+              <button type="button" class="btn btn-primary prev-step">Passo anterior</button>
+              <button type="button" class="btn btn-primary next-step">Próximo passo</button>
+            </div>
+          <!-- Passo 5-->
+          <div class="form-step" id="step-5">
+              <h2>Descrição</h2>
+              <div style="border: 1px solid #17043b; border-radius: 4px;">
+                <div class="form-group" style="padding:25px;">
+                  
+                  <table class="table table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Denominação</th>
+                        <td>teste Documento</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Especie de documento</th>
+                        <td>Documento arquivado a pedido das partes</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Data do documento</th>
+                        <td>2023-01-25</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Tipo de arquivo</th>
+                        <td>Maço das procurações irrovagavies</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Livro/Maço</th>
+                        <td>45C</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Numero de páginas</th>
+                        <td>30</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Licença</th>
+                        <td>494ª - Cartório Notorial Braga</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Arquivo</th>
+                        <td>494ª - Cartório Teste</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Responsavél Arquivo</th>
+                        <td>António Silva</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div style="margin-top:10px">
+              <button type="button" class="btn btn-primary prev-step">Passo anterior</button>
+              <button type="button" class="btn btn-primary next-step">Próximo passo</button>
+              </div>
+          </div>
+          <!-- Passo 6-->
+          <div class="form-step" id="step-6">
+            <div style="border: 1px solid #17043b; border-radius: 4px;">
+              <div class="form-group" style="padding:25px;">
+                <h2>Dados Faturação</h2>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">NIF</th>
+                      <td>123456789</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Nome</th>
+                      <td>Pedro Silva</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Morada</th>
+                      <td>Rua Direita, nº14-B</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div style="margin-top:10px; border: 1px solid #17043b; border-radius: 4px;">
+              <h2>Meio de Pagamento</h2>
+              <div class="form-check">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                   Meo Wallet
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                   Referencia Multibanco
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:10px">
+            <button type="button" class="btn btn-primary prev-step">Passo anterior</button>
+            <button type="button" class="btn btn-primary next-step">Próximo passo</button>
+            </div>
+          </div>
+          <!-- Passo 7-->
+          <div class="form-step" id="step-7">
+                <div style="border: 1px solid #17043b; border-radius: 4px;">
+                  <div class="form-group" style="padding:25px;">
+                    <h2>Comprovativo</h2>
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Identificador unico do documento</th>
+                          <td>123456789</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Estado</th>
+                          <td>Submetido</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Data de arquivo</th>
+                          <td>2023-01-30</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Utilizador</th>
+                          <td>13002374-João Paulo Ferreira</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="form-group" style="padding:25px;">
+                    <h2>Pagamento</h2>
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Número</th>
+                          <td>FCT - 123456798</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Data Emissão</th>
+                          <td>2023-01-30</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Total</th>
+                          <td>7,00€</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Data Pagamento</th>
+                          <td>30-01-2023</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Meio Pagamento</th>
+                          <td>Meo Wallet</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                  <div style="margin-top:10px">
+                    <button type="button" class="btn btn-primary prev-step">Passo anterior</button>
+                    <button type="submit" class="btn btn-success">Enviar formulário</button> 
+                  </div>
+                </div>
+        </form>
+      </div>  
+         
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+       
+  </body>
+</html>
